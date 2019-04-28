@@ -5,10 +5,18 @@
     <title>Questão 07</title>
 </head>
 <body>
+        <p>Olá <span id="nome"></span> <span id="sobrenome"></span>! Você tem <span id="idade"></span> anos!</p>
     <script>
         var nome = 'Matheus';
         var sobrenome = 'Rubio';
-        var idade = 19;    
+        var idade = 19;
+        var nome1, sobrenome1, idade1;
+        nome1 = document.getElementById("nome");
+        sobrenome1 = document.getElementById("sobrenome");
+        idade1 = document.getElementById("idade");
+        nome1.textContent = nome;
+        sobrenome1.textContent = sobrenome;
+        idade1.textContent = idade;
     </script>
 </body>
 </html>
