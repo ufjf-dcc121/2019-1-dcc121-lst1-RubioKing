@@ -10,7 +10,14 @@
     <div id="produto"></div>
     <div id="soma"></div>
     <script>
-        
+        var x = document.getElementById("x").textContent;
+        var y = document.getElementById("y").textContent;
+        var produto = document.getElementById("produto");
+        var soma = document.getElementById("soma");
+        var x1 = Number(x);
+        var y1 = Number(y);
+        produto.textContent = "O Produto de " + x + " e " + y + " é " + x * y;
+        soma.textContent = "A soma de " + x + " e " + y + " é " + (x1 + y1);
     </script>
 </body>
 </html>
