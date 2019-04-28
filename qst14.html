@@ -12,11 +12,16 @@
     <button id="calcular">Calcular!</button>
     <script>
         var x, y, produto, soma, botao;
-        x = document.getElementById("x");
-        y = document.getElementById("y");
+        x = document.getElementById("x").textContent;
+        y = document.getElementById("y").textContent;
         produto = document.getElementById("produto");
         soma = document.getElementById("soma");
-        botao = document.getElementById("botao");
+        botao = document.getElementById("calcular");
+        botao.addEventListener("click", clique);
+        function clique() {
+            produto.textContent = "O produto de " + x + " e " + y + " é " + (x * y);
+            soma.textContent = "A soma de " + x + " e " + y + " é " + (Number(x) + Number(y));
+        }
     </script>
 </body>
 </html>
