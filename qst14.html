@@ -5,13 +5,18 @@
     <title>Questão 14</title>
 </head>
 <body>
-    <div id="x">7</div>
-    <div id="y">5</div>
+    <div id="x" contenteditable="true">7</div>
+    <div id="y" contenteditable="true">5</div>
     <div id="produto"></div>
     <div id="soma"></div>
     <button id="calcular">Calcular!</button>
     <script>
         var x, y, produto, soma, botao;
+        x = document.getElementById("x");
+        y = document.getElementById("y");
+        produto = document.getElementById("produto");
+        soma = document.getElementById("soma");
+        botao = document.getElementById("botao");
     </script>
 </body>
 </html>
