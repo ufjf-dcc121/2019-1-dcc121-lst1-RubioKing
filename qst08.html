@@ -5,6 +5,15 @@
     <title>Questão 08</title>
 </head>
 <body>
-    
+    <p>X + Y + Z = <span></span> + <span></span> + <span></span> = <span></span></p>
+    <script>
+        var x = 3, y = 7, z = 9;
+        var resultado = x + y + z;
+        var spans = document.querySelectorAll("span");
+        spans[0].textContent = x;
+        spans[1].textContent = y;
+        spans[2].textContent = z;
+        spans[3].textContent = resultado;   
+    </script>
 </body>
 </html>
