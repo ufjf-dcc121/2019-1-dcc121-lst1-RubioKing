@@ -24,7 +24,7 @@
         var botaoLimpar = document.getElementById("limpar");
         var resultado = document.getElementById("resultado");
         var melhorias = document.getElementById("melhorias");
-        var media = (Number(confeitaria) + Number(coberturas) + Number(bolos)/3);
+        var media = ((Number(confeitaria) + Number(coberturas) + Number(bolos))/3);
         botaoLimpar.addEventListener("click", limparClick);
         botaoAvaliar.addEventListener("click", avaliarClick);
         function limparClick() {
@@ -33,19 +33,19 @@
         }
         function avaliarClick() {
             if (media >= 70) {
-                resultado.textContent = "Parabéns Fulano! Você está aprovado com média 70!";
+                resultado.textContent = "Parabéns Fulano! Você está aprovado com média " + parseInt(media) + "!";
             }
             else {
-                resultado.textContent = "Você está reprovado com média 50!"
+                resultado.textContent = "Você está reprovado com média " + parseInt(media) + "!";
             }
             if (Number(confeitaria) < 60) {
                 melhorias.textContent = melhorias.textContent + "Fulano, considere estudar mais Confeitaria!";
             }
             if (Number(coberturas) < 60) {
-                melhorias.textContent = melhorias.textContent +  "Fulano, considere estudar mais Casfaf!";
+                melhorias.textContent = melhorias.textContent +  "Fulano, considere estudar mais Coberturas!";
             }
             if (Number(bolos) < 60) {
-                melhorias.textContent =  melhorias.textContent + "Fulano, considere estudar mais ssdia!";
+                melhorias.textContent =  melhorias.textContent + "Fulano, considere estudar mais Bolos!";
             }
             if (Number(confeitaria) < 60 && Number(coberturas) < 60 && Number(bolos) < 60) {
                 melhorias.textContent = "Fulano, considere estudar todas as disciplinas !";
