@@ -9,21 +9,22 @@
         <h1>Resultado da Avaliação</h1>
         <p>Olá <span contenteditable="true" id="nome">Fulano</span>, você está matriculado há <span contenteditable="true" id="anos">2</span> anos no curso de Confeitaria e as notas das suas disciplinas são: <span contenteditable="true" id="confeitaria">70</span> em Confeitaria Básica; <span contenteditable="true" id="coberturas">80</span> em Coberturas e <span contenteditable="true" id="bolos">60</span> em Broas e Bolos.</p>
         <p id="resultado"></p>
+        <p id="melhorias"></p>
         <button id="avaliar">Avaliar</button>
         <button id="limpar">Limpar</button>
-        <p id="melhorias"></p>
+        
     </main>
-    <script>
+    <script type="text/javascript">
         var nome = document.getElementById("nome");
         var anos = document.getElementById("anos");
-        var confeitaria = document.getElementById("confeitaria");
-        var coberturas = document.getElementById("coberturas");
-        var bolos = document.getElementById("bolos");
+        var confeitaria = document.getElementById("confeitaria").textContent;
+        var coberturas = document.getElementById("coberturas").textContent;
+        var bolos = document.getElementById("bolos").textContent;
         var botaoAvaliar = document.getElementById("avaliar");
         var botaoLimpar = document.getElementById("limpar");
         var resultado = document.getElementById("resultado");
         var melhorias = document.getElementById("melhorias");
-        var media;
+        var media = (Number(confeitaria) + Number(coberturas) + Number(bolos)/3);
         botaoLimpar.addEventListener("click", limparClick);
         botaoAvaliar.addEventListener("click", avaliarClick);
         function limparClick() {
@@ -31,11 +32,23 @@
             melhorias.textContent = "";
         }
         function avaliarClick() {
-            if (media > 70) {
+            if (media >= 70) {
                 resultado.textContent = "Parabéns Fulano! Você está aprovado com média 70!";
             }
             else {
                 resultado.textContent = "Você está reprovado com média 50!"
+            }
+            if (Number(confeitaria) < 60) {
+                melhorias.textContent = melhorias.textContent + "Fulano, considere estudar mais Confeitaria!";
+            }
+            if (Number(coberturas) < 60) {
+                melhorias.textContent = melhorias.textContent +  "Fulano, considere estudar mais Casfaf!";
+            }
+            if (Number(bolos) < 60) {
+                melhorias.textContent =  melhorias.textContent + "Fulano, considere estudar mais ssdia!";
+            }
+            if (Number(confeitaria) < 60 && Number(coberturas) < 60 && Number(bolos) < 60) {
+                melhorias.textContent = "Fulano, considere estudar todas as disciplinas !";
             }
         }
     </script>
